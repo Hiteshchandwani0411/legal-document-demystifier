@@ -1,89 +1,96 @@
 # Legal Document Demystifier
 
-An AI-powered web application designed to help users understand, analyze, edit, and translate complex legal documents and forms. Built with React, TypeScript, and the Google Gemini API, this tool transforms dense legal text into simple, actionable insights.
+*🏆 A Submission for the GOOGLE GEN AI HACKATHON 🏆*
 
-## ✨ Key Features
+*Team:* 404 Raita Not Found <br/>
+*Members:* Hitesh, Linsha, Siddhant, Rudraksh
 
-This application is composed of several powerful, AI-driven modules:
+---
 
-*   **📄 Document Analyzer:**
-    *   Upload a document (PDF, TXT, image) or paste text to receive a comprehensive analysis.
-    *   Get a concise summary, a list of potential issues and red flags, key clause explanations, and a timeline of important dates.
-    *   **Interactive Editing:** Act on AI suggestions! Get AI-powered fixes for problematic clauses, review them with explanations, and accept changes to edit the document live.
-    *   **Visual Diffing:** Track your changes with a side-by-side view of the original and edited document, with additions and deletions highlighted.
-    *   Download your edited document as a `.txt` file.
+## 🎯 The Problem: Legal Jargon is a Barrier for Everyone
 
-*   **🤖 Document Guide:**
-    *   A chat-based assistant ("Good Man") that provides step-by-step guidance on creating legal documents or navigating legal processes (e.g., "How to create a will").
+Legal documents, from rental agreements to complex contracts, are filled with dense, intimidating language. This complexity creates a significant barrier for the average person, leading to:
+*   *Lack of Understanding:* People often sign documents without fully grasping the terms, commitments, and potential risks involved.
+*   *Hidden Risks:* Unfavorable clauses, red flags, and critical deadlines can be easily missed, leading to future complications.
+*   *High Costs:* Hiring a lawyer to review every document is expensive and time-consuming, making professional advice inaccessible for many everyday situations.
+*   *Uncertainty & Fear:* The daunting nature of legal paperwork prevents people from feeling confident and in control of their own affairs.
 
-*   **✒️ Form Simplifier:**
-    *   Demystifies complex forms by breaking them down field by field.
-    *   For each field, it provides the original text, a simple explanation, what information to enter, and *why* that information is needed.
+## ✨ Our Solution: An AI-Powered Legal Assistant
 
-*   **🌐 Document Translator:**
-    *   Translates document text or uploaded files into a wide range of languages using AI.
+*Legal Document Demystifier* is a user-friendly web application that leverages the power of the Google Gemini API to make legal documents simple, transparent, and actionable. It acts as an on-demand assistant, empowering anyone to understand and manage legal text with confidence.
 
-## 🛠️ Technology Stack
+We bridge the gap between complex legal language and the need for clear understanding, democratizing access to crucial information that was once locked behind a paywall of professional fees.
 
-*   **Frontend:** React, TypeScript, Framer Motion
-*   **Styling:** Tailwind CSS
-*   **AI:** Google Gemini API (`@google/genai`)
+## 🚀 Key Features
 
-## 🚀 Getting Started: Running Locally
+Our application provides a suite of tools designed to tackle specific user challenges:
+
+*   *📄 Document Analyzer:*
+    *   *What it does:* Upload a document (PDF, TXT, image) or paste text to receive a comprehensive, easy-to-read analysis.
+    *   *How it helps:* Instantly get a concise *summary, a list of **potential issues & red flags, **key clause explanations* in plain English, and a *timeline of important dates*. No more guessing what a document means.
+
+*   *✍ Interactive Editor with AI Fixes:*
+    *   *What it does:* For any identified issue, the AI can *suggest a revised, safer clause*. Users can review the suggestion, understand the reasoning behind it, and accept the fix to edit the document live.
+    *   *How it helps:* Empowers users to not just find problems, but to actively fix them, transforming a passive reading experience into an active, decision-making one. A visual "diff" viewer clearly shows all changes made.
+
+*   *🤖 Document Guide:*
+    *   *What it does:* A chat-based assistant that provides step-by-step guidance on creating legal documents or navigating legal processes (e.g., "How do I write a basic will?").
+    *   *How it helps:* Overcomes the "blank page" problem by providing a clear starting point and structured guidance for common legal tasks.
+
+*   *✒ Form Simplifier:*
+    *   *What it does:* Breaks down confusing forms field by field.
+    *   *How it helps:* For each field, it provides the original text, a simple explanation, what information to enter, and why that information is needed, eliminating the guesswork from filling out applications and agreements.
+
+*   *🌐 Document Translator:*
+    *   *What it does:* Translates document text or uploaded files into numerous languages.
+    *   *How it helps:* Makes legal documents accessible across linguistic barriers.
+
+## 🛠 Technology Stack
+
+*   *Frontend:* React, TypeScript, Framer Motion
+*   *Styling:* Tailwind CSS
+*   *Core AI Engine:* **Google Gemini API (gemini-2.5-flash)** is the heart of our application, powering everything from text extraction and summarization to legal analysis, clause rewriting, and conversational guidance.
+
+## 🏃‍♂ Getting Started: Running Locally
 
 Follow these steps to set up and run the project on your local machine.
 
 ### 1. Prerequisites
-
-Ensure you have [Node.js](https://nodejs.org/) (which includes `npm`) installed on your system.
+Ensure you have [Node.js](https://nodejs.org/) installed.
 
 ### 2. Installation & Setup
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/legal-document-demystifier.git
+1.  *Clone & Install:*
+    bash
+    git clone https://github.com/your-repo/legal-document-demystifier.git
     cd legal-document-demystifier
-    ```
-
-2.  **Install dependencies:**
-    ```bash
     npm install
-    ```
+    
 
-3.  **Set up your API Key (Crucial!)**
-
-    This project requires a Google Gemini API key to function. To keep your key secure and private, you must use environment variables.
-
-    *   Obtain your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-    *   In the root directory of the project, create a new file named `.env`:
-        ```bash
+2.  *Set up your Gemini API Key (Crucial!)*
+    *   Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+    *   Create a .env file in the project's root directory:
+        bash
         touch .env
-        ```
-    *   Open the `.env` file and add your API key in the following format:
-        ```
-        API_KEY="YOUR_GEMINI_API_KEY_HERE"
-        ```
-        Replace `YOUR_GEMINI_API_KEY_HERE` with the actual key you obtained.
+        
+    *   Add your API key to the .env file. **The VITE_ prefix is required by Vite.**
+        
+        VITE_API_KEY="YOUR_GEMINI_API_KEY_HERE"
+        
+    *   *Security:* Ensure your .env file is listed in .gitignore to keep your key private.
 
-    *   **IMPORTANT:** To prevent your API key from being exposed publicly, ensure your `.env` file is listed in your `.gitignore` file. If `.gitignore` doesn't exist, create one and add `.env` to it. This will prevent Git from ever tracking the file.
-        ```
-        # .gitignore
-        .env
-        node_modules
-        dist
-        ```
-
-4.  **Run the development server:**
-    The command to run the app depends on your project setup (e.g., Vite, Create React App). A common command is:
-    ```bash
+3.  *Run the App:*
+    bash
     npm run dev
-    ```
-    Or:
-    ```bash
-    npm start
-    ```
-    Once the server is running, open your browser and navigate to the local address provided (usually `http://localhost:5173` or `http://localhost:3000`).
+    
+    Open your browser to http://localhost:5173 (or the address provided).
 
-## ⚖️ Disclaimer
+## 🧑‍💻 Meet the Team: 404 Raita Not Found
 
-This tool provides AI-generated information and is **not a substitute for professional legal advice**. The information provided may not be accurate, complete, or up-to-date. Always consult with a qualified legal professional for advice on your specific situation.
+*   *Hitesh*
+*   *Linsha*
+*   *Siddhant*
+*   *Rudraksh*
+
+## ⚖ Disclaimer
+
+This tool provides AI-generated information and is *not a substitute for professional legal advice*. The information provided may not be accurate, complete, or up-to-date. Always consult with a qualified legal professional for advice on your specific situation.
